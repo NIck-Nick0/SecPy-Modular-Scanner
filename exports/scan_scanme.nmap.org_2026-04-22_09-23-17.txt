@@ -1,0 +1,12 @@
+==================================================
+SEC-PY SCAN REPORT
+Target: scanme.nmap.org
+Scan Type: Port Scan with Banner Grabbing
+Date/Time: 2026-04-22 09:23:17
+==================================================
+
+[+] Port 22 is OPEN | Banner: SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13
+[+] Port 80 is OPEN
+
+==================================================
+End of Report

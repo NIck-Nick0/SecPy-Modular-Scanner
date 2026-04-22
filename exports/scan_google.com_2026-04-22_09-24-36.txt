@@ -1,0 +1,18 @@
+==================================================
+SEC-PY SCAN REPORT
+Target: google.com
+Scan Type: Web Reconnaissance
+Date/Time: 2026-04-22 09:24:36
+==================================================
+
+Target URL: http://google.com
+[+] Status Code: 200
+[+] Server: gws
+[*] Security Headers Analysis:
+[+] X-Frame-Options: Found
+[-] Content-Security-Policy: Missing
+[-] X-Content-Type-Options: Missing
+[-] Strict-Transport-Security: Missing
+
+==================================================
+End of Report
