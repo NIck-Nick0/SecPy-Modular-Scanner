@@ -1,0 +1,44 @@
+
+==================================================
+MODULE: Subdomain Discovery
+TIME  : 09:48:38
+------------------------------
+[+] Found: www.hackthissite.org (137.74.187.104)
+==================================================
+
+==================================================
+MODULE: Port Scan with Banner Grabbing
+TIME  : 09:48:39
+------------------------------
+[+] Port 80 is OPEN
+[+] Port 443 is OPEN
+==================================================
+
+==================================================
+MODULE: Web Reconnaissance
+TIME  : 09:48:45
+------------------------------
+Target URL: http://hackthissite.org
+[+] Status Code: 200
+[+] Server: HackThisSite
+[*] Security Headers Analysis:
+[-] X-Frame-Options: Missing
+[+] Content-Security-Policy: Found
+[-] X-Content-Type-Options: Missing
+[+] Strict-Transport-Security: Found
+==================================================
+
+==================================================
+MODULE: Directory Brute-force
+TIME  : 09:48:45
+------------------------------
+[!] Redirect: /login (Status: 301)
+[!] Redirect: /config (Status: 301)
+[!] Redirect: /admin (Status: 301)
+[!] Redirect: /backup (Status: 301)
+[!] Redirect: /api (Status: 301)
+[!] Redirect: /.env (Status: 301)
+[!] Redirect: /uploads (Status: 301)
+[!] Redirect: /.git (Status: 301)
+[!] Redirect: /phpmyadmin (Status: 301)
+==================================================
