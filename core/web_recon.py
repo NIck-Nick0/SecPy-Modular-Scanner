@@ -36,37 +36,30 @@ def run_web_recon(target, verbose=False):
 
     print(f"{Fore.YELLOW}[*] Starting Web Reconnaissance on {url}...")
     
-    # List to collect all findings for the logger
     web_findings = []
     web_findings.append(f"Target URL: {url}")
 
     try:
-        # Use a realistic User-Agent
         user_agent = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) SecPyScanner/1.0'}
         response = requests.get(url, timeout=5, headers=user_agent)
         
-        # 1. Status Code
         status_info = f"[+] Status Code: {response.status_code}"
         print(f"{Fore.GREEN}{status_info}")
         web_findings.append(status_info)
         
-        # 2. Server Banner
         server = response.headers.get("Server", "Unknown")
         server_info = f"[+] Server: {server}"
         print(f"{Fore.GREEN}{server_info}")
         web_findings.append(server_info)
 
-        # 3. Raw Headers (if verbose)
         if verbose:
             print(f"\n{Fore.WHITE}--- Raw Headers ---")
             for key, value in response.headers.items():
                 print(f"{key}: {value}")
             print(f"--- End of Raw Headers ---\n")
 
-        # 4. Security Headers Check
         header_results = check_security_headers(response.headers)
         for line in header_results:
-            # Color code the output based on content
             if "Found" in line:
                 print(f"{Fore.GREEN}{line}")
             elif "Missing" in line:
@@ -75,7 +68,6 @@ def run_web_recon(target, verbose=False):
                 print(line)
             web_findings.append(line)
 
-        # 5. Logging to TXT
         if web_findings:
             log_to_txt(target, "Web Reconnaissance", web_findings)
 

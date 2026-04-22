@@ -44,7 +44,7 @@ def main():
 
         elif args.mode == "all":
             print(f"[*] Running full reconnaissance on: {args.target}")
-            run_sub_finder(args.target, args.verbose) # نبدأ بالـ Subdomains أولاً
+            run_sub_finder(args.target, args.verbose) 
             run_port_scan(args.target, args.verbose)
             run_web_recon(args.target, args.verbose)
             run_dir_buster(args.target, args.verbose)

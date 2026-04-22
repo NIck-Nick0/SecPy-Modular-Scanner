@@ -9,7 +9,6 @@ def get_banner(s):
     Attempts to grab the service banner from an open socket.
     """
     try:
-        # Some services send a banner immediately upon connection (like SSH, FTP)
         return s.recv(1024).decode().strip()
     except:
         return None
@@ -20,7 +19,7 @@ def scan_port(target, port, verbose=False):
     """
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.settimeout(1.5) # Increased timeout slightly for banner grabbing
+        s.settimeout(1.5) 
         result = s.connect_ex((target, int(port)))
         
         if result == 0:
@@ -49,7 +48,7 @@ def run_port_scan(target, verbose=False):
     ports = load_wordlist(wordlist_path)
     
     if not ports:
-        ports = [21, 22, 80, 443, 3389] # Fallback ports
+        ports = [21, 22, 80, 443, 3389] 
 
     print(f"{Fore.YELLOW}[*] Initializing Banner Grabbing scan on {target}...")
     

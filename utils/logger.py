@@ -10,7 +10,6 @@ def log_to_txt(target, scan_type, results):
     if not os.path.exists(export_dir):
         os.makedirs(export_dir)
 
-    # Removed seconds and minutes so all modules write to the same file for the day
     date_str = datetime.now().strftime("%Y-%m-%d")
     filename = f"{export_dir}/report_{target}_{date_str}.txt"
 

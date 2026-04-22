@@ -33,7 +33,6 @@ def run_sub_finder(target, verbose=False):
     
     found_subs = []
 
-    # Using 50 threads for fast DNS lookups
     with ThreadPoolExecutor(max_workers=50) as executor:
         futures = {executor.submit(check_subdomain, target, sub): sub for sub in subs}
         
